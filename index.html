@@ -1,111 +1,59 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TaskFlow</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مخطط الإنجاز 🚀</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <main class="page">
+        <div class="app">
+            <header class="header">
+                <div>
+                    <h1>مخطط الإنجاز</h1>
+                    <p class="subtitle">نظّم مهامك وسيطر على يومك بذكاء</p>
+                </div>
+                <button id="themeToggle">🌙</button>
+            </header>
 
-<main class="page">
+            <section class="stats">
+                <div class="stat"><span>كل المهام</span><strong id="totalTasks">0</strong></div>
+                <div class="stat"><span>المكتملة</span><strong id="completedTasks">0</strong></div>
+                <div class="stat"><span>الغير مكتملة</span><strong id="remainingTasks">0</strong></div>
+            </section>
 
-<div class="app">
+            <section class="progress-section">
+                <div class="progress-head"><span>نسبة الإنجاز</span><span id="progressText">0%</span></div>
+                <div class="progress-bar"><div id="progressFill"></div></div>
+            </section>
 
-<header class="header">
+            <section class="add-box">
+                <div class="add-row">
+                    <input id="taskInput" placeholder="ما هو هدفك القادم؟">
+                    <button id="addBtn">إضافة هدف</button>
+                </div>
+                <div class="filters">
+                    <button class="filter-btn active" data-filter="all">الكل</button>
+                    <button class="filter-btn" data-filter="completed">المكتملة</button>
+                    <button class="filter-btn" data-filter="pending">قيد التنفيذ</button>
+                </div>
+            </section>
 
-<div>
-<h1>قائمة المهام</h1>
-<p class="subtitle">نظّم يومك بطريقة بسيطة وواضحة</p>
-</div>
+            <ul id="taskList"></ul>
 
-<button id="themeToggle">🌙</button>
+            <footer class="actions-footer">
+                <button id="clearCompletedBtn">حذف المكتمل</button>
+                <button id="clearAllBtn" class="danger">تصفير اللوحة</button>
+            </footer>
 
-</header>
-
-
-<section class="stats">
-
-<div class="stat">
-<span>كل المهام</span>
-<strong id="totalTasks">0</strong>
-</div>
-
-<div class="stat">
-<span>المكتملة</span>
-<strong id="completedTasks">0</strong>
-</div>
-
-<div class="stat">
-<span>المتبقية</span>
-<strong id="remainingTasks">0</strong>
-</div>
-
-</section>
-
-
-<section class="progress">
-
-<div class="progress-head">
-<span>التقدم</span>
-<span id="progressText">0%</span>
-</div>
-
-<div class="progress-bar">
-<div id="progressFill"></div>
-</div>
-
-</section>
-
-
-<section class="add">
-
-<div class="add-row">
-
-<input id="taskInput" placeholder="اكتب/ي مهمة جديدة">
-
-<button id="addBtn">إضافة</button>
-
-</div>
-
-
-<div class="filters">
-
-<button class="filter active" data-filter="all">الكل</button>
-
-<button class="filter" data-filter="completed">المكتملة</button>
-
-<button class="filter" data-filter="pending">غير المكتملة</button>
-
-</div>
-
-</section>
-
-
-<ul id="taskList"></ul>
-
-
-<footer class="bottom">
-
-<button id="clearCompleted">حذف المكتملة</button>
-
-<button id="clearAll" class="danger">حذف الكل</button>
-
-</footer>
-
-<footer class="credit">
-Made by Eng. Saja
-للتواصل 0597054487
-</footer>
-
-</div>
-
-</main>
-
-<div id="toast">تم إنجاز المهمة 🎉</div>
-
-<script src="script.js"></script>
-
+            <footer class="brand-footer">
+                تم التطوير بواسطة المهندسة <span>سجى</span> 💻
+            </footer>
+        </div>
+    </main>
+    <div id="toast">تم الإنجاز بنجاح 🎉</div>
+    <script src="script.js"></script>
 </body>
 </html>
